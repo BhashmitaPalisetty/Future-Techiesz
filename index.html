@@ -1,123 +1,202 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Bhashmita Palisetty | Portfolio</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bhashmita Palisetty| Portfolio</title>
 
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Segoe UI', sans-serif;
-            background: linear-gradient(to right, #667eea, #764ba2);
-            color: #333;
-        }
+<style>
+:root {
+    --bg: #f4f6f9;
+    --text: #222;
+    --card: #ffffff;
+    --accent: #4f46e5;
+}
 
-        .card {
-            max-width: 800px;
-            margin: 60px auto;
-            background: white;
-            padding: 40px;
-            border-radius: 15px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-        }
+body.dark {
+    --bg: #121212;
+    --text: #f5f5f5;
+    --card: #1e1e1e;
+    --accent: #7c3aed;
+}
 
-        h1 {
-            text-align: center;
-            margin-bottom: 5px;
-            font-size: 36px;
-        }
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    transition: 0.4s ease;
+}
 
-        .tagline {
-            text-align: center;
-            color: gray;
-            margin-bottom: 30px;
-        }
+.container {
+    max-width: 900px;
+    margin: auto;
+    padding: 40px 20px;
+}
 
-        h2 {
-            margin-top: 30px;
-            border-left: 5px solid #667eea;
-            padding-left: 10px;
-        }
+.card {
+    background: var(--card);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    animation: fadeIn 1.2s ease;
+}
 
-        ul {
-            padding-left: 20px;
-        }
+h1 {
+    font-size: 38px;
+    margin-bottom: 5px;
+}
 
-        .project {
-            background: #f4f6fb;
-            padding: 15px;
-            border-radius: 8px;
-            margin-top: 10px;
-        }
+.typing {
+    font-size: 18px;
+    color: var(--accent);
+    min-height: 24px;
+}
 
-        .contact a {
-            text-decoration: none;
-            color: #667eea;
-            font-weight: bold;
-        }
+h2 {
+    margin-top: 35px;
+    border-left: 4px solid var(--accent);
+    padding-left: 10px;
+}
 
-        .contact a:hover {
-            text-decoration: underline;
-        }
+ul {
+    padding-left: 20px;
+}
 
-        footer {
-            text-align: center;
-            margin-top: 40px;
-            color: gray;
-            font-size: 14px;
-        }
+.project {
+    background: rgba(79,70,229,0.08);
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 15px;
+    transition: transform 0.3s ease;
+}
 
-        @media (max-width: 600px) {
-            .card {
-                margin: 20px;
-                padding: 20px;
-            }
-        }
-    </style>
+.project:hover {
+    transform: translateY(-5px);
+}
+
+.toggle-btn {
+    float: right;
+    cursor: pointer;
+    background: var(--accent);
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 14px;
+}
+
+a {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+footer {
+    margin-top: 40px;
+    font-size: 14px;
+    text-align: center;
+    opacity: 0.7;
+}
+
+@keyframes fadeIn {
+    from {opacity: 0; transform: translateY(20px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+@media(max-width:600px){
+    .card {
+        padding: 25px;
+    }
+}
+</style>
 </head>
 
 <body>
 
-<div class="card">
+<div class="container">
+    <div class="card">
+        <button class="toggle-btn" onclick="toggleMode()">Dark Mode</button>
 
-    <h1>Bhashmita Palisetty</h1>
-    <p class="tagline">Aspiring Developer | AI Enthusiast | Creative Thinker</p>
+        <h1>Bhashmita Palisetty</h1>
+        <div class="typing" id="typing"></div>
 
-    <h2>About Me</h2>
-    <p>
-        I am a passionate student who loves building creative web applications 
-        and solving real-world problems using technology. I am interested in 
-        Artificial Intelligence, Web Development, and innovative project ideas.
-    </p>
+        <h2>About Me</h2>
+        <p>
+            I am a motivated student passionate about building impactful 
+            technology solutions. My interests include Web Development, 
+            Artificial Intelligence, and innovative real-world problem solving.
+        </p>
 
-    <h2>Skills</h2>
-    <ul>
-        <li>HTML & CSS</li>
-        <li>JavaScript</li>
-        <li>Python</li>
-        <li>Basic AI/ML Concepts</li>
-    </ul>
+        <h2>Skills</h2>
+        <ul>
+            <li>HTML, CSS, JavaScript</li>
+            <li>Python & Basic AI Concepts</li>
+            <li>Responsive Web Design</li>
+            <li>Problem Solving</li>
+        </ul>
 
-    <h2>Project</h2>
-    <div class="project">
-        <strong>AI Resume Analyzer</strong>
-        <p>A smart web tool that analyzes resumes and suggests missing skills 
-        to improve job selection chances.</p>
-    </div>
+        <h2>Featured Project</h2>
+        <div class="project">
+            <strong>AI Resume Analyzer</strong>
+            <p>
+                A web-based tool that analyzes resumes and suggests missing 
+                skills to improve job opportunities.
+            </p>
+        </div>
 
-    <h2>Contact</h2>
-    <div class="contact">
-        <p>Email: yourmail@example.com</p>
+        <h2>Contact</h2>
+        <p>Email: bhashmita071@gmail.com</p>
         <p>GitHub: <a href="#">github.com/yourusername</a></p>
-        <p>LinkedIn: <a href="#">linkedin.com/in/yourprofile</a></p>
+        <p>LinkedIn: <a href="#">www.linkedin.com/in/bhashmita-palisetty-396225371</a></p>
+
+        <footer>
+            © 2026 Bhashmita palisetty | Designed with professionalism
+        </footer>
     </div>
-
-    <footer>
-        © 2026 Your Name. All Rights Reserved.
-    </footer>
-
 </div>
+
+<script>
+// Typing Effect
+const textArray = [
+    "Aspiring Software Developer",
+    "AI Enthusiast",
+    "Creative Problem Solver"
+];
+
+let typingElement = document.getElementById("typing");
+let textIndex = 0;
+let charIndex = 0;
+
+function typeEffect() {
+    if (charIndex < textArray[textIndex].length) {
+        typingElement.textContent += textArray[textIndex].charAt(charIndex);
+        charIndex++;
+        setTimeout(typeEffect, 70);
+    } else {
+        setTimeout(eraseEffect, 1500);
+    }
+}
+
+function eraseEffect() {
+    if (charIndex > 0) {
+        typingElement.textContent = textArray[textIndex].substring(0, charIndex - 1);
+        charIndex--;
+        setTimeout(eraseEffect, 40);
+    } else {
+        textIndex++;
+        if (textIndex >= textArray.length) textIndex = 0;
+        setTimeout(typeEffect, 500);
+    }
+}
+
+document.addEventListener("DOMContentLoaded", typeEffect);
+
+// Dark Mode Toggle
+function toggleMode() {
+    document.body.classList.toggle("dark");
+}
+</script>
 
 </body>
 </html>
